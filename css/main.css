@@ -1,0 +1,125 @@
+/* CSS Variables for Theme System */
+:root {
+  --bg-primary: #f3f3f1;
+  --bg-secondary: #fff;
+  --bg-accent: #000;
+  --text-primary: #000;
+  --text-secondary: #7f7f7f;
+  --text-light: #000;
+  --bg-button: #f3f3f1;
+  --border-color: transparent;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1c1c1e;
+  --bg-secondary: #2c2c2e;
+  --bg-accent: #fff;
+  --text-primary: #fff;
+  --text-secondary: #8e8e93;
+  --text-light: #fff;
+  --bg-button: #3a3a3c;
+  --border-color: #3a3a3c;
+}
+
+*,.slick-slider{box-sizing:border-box}.user__lang,.user__name,.user__theme{font-family:"SFUI Semibold",sans-serif}.user__position,body{font-family:"SFUI Medium",sans-serif}.main__banner,.slick-dots li.slick-active button{background:var(--bg-accent)}*,.portfolio .slick-track{padding:0}.main__banner,.to-top__banner,.user,.user__lang,.user__theme{text-align:center}*,.slider.portfolio .slider__item{margin:0}@font-face{font-family:"SFUI Medium";src:url("../fonts/SFUIDisplay-Medium.woff2") format("woff2"),url("../fonts/SFUIDisplay-Medium.woff") format("woff");font-weight:500}@font-face{font-family:"SFUI Semibold";src:url("../fonts/SFUIDisplay-Semibold.woff2") format("woff2"),url("../fonts/SFUIDisplay-Semibold.woff") format("woff");font-weight:600}@font-face{font-family:"SFUI Bold";src:url("../fonts/SFUIDisplay-Bold.woff2") format("woff2"),url("../fonts/SFUIDisplay-Bold.woff") format("woff");font-weight:700}.slick-list,.slick-slider,.slick-track{position:relative;display:block}.slick-slider{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none;-khtml-user-select:none;-ms-touch-action:pan-y;touch-action:pan-y;-webkit-tap-highlight-color:transparent}.slick-list{overflow:hidden;margin:0;padding:0}.slick-list:focus{outline:0}.slick-list.dragging{cursor:pointer;cursor:hand}.slick-slider .slick-list,.slick-slider .slick-track{-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.slick-track{top:0;left:0;margin-left:auto;margin-right:auto}.slick-track:after,.slick-track:before{display:table;content:''}.slick-track:after{clear:both}.slick-loading .slick-slide,.slick-loading .slick-track{visibility:hidden}.slick-slide{display:none;float:left;height:100%;min-height:1px}[dir=rtl] .slick-slide{float:right}.media__text i,.slick-initialized .slick-slide,.slick-slide img,.user__photo,.user__photo img{display:block}.slick-arrow.slick-hidden,.slick-slide.slick-loading img{display:none}.slick-slide.dragging img{pointer-events:none}.slick-vertical .slick-slide{display:block;height:auto;border:1px solid transparent}/* Theme Toggle Button Styles - простий постійний фон */
+.user__theme {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: none;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.theme-icon {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sun-icon {
+  opacity: 0;
+  position: absolute;
+}
+
+.moon-icon {
+  opacity: 1;
+}
+
+[data-theme="dark"] .sun-icon {
+  opacity: 1;
+}
+
+[data-theme="dark"] .moon-icon {
+  opacity: 0;
+}
+
+body{font-size:14px;background:var(--bg-primary);color:var(--text-primary);-webkit-font-smoothing:antialiased;transition:background-color 0.3s ease, color 0.3s ease}img{max-width:100%}.main.last{margin-bottom:30px}.main.portfolio .main__container{padding:0 0 0 30px}.main__container{max-width:315px;margin:auto}.main__banner a{color:#fff;text-decoration:none}.main__banner{line-height:30px;color:#fff;font-size:14px}.media__item,.slider__item,.story,.user__lang{background:var(--bg-secondary);transition:background-color 0.3s ease}.media__item,.slider__item,.slider__link,.user__lang,.user__lang a,.web-slider__link{color:var(--text-primary);text-decoration:none}.media__title{color:var(--text-primary)}.user__name{color:var(--text-primary)}.user__position{color:var(--text-primary)}.user{margin-bottom:14px;position:relative;margin-top:20px}.user__lang{position:absolute;top:0;right:0;width:40px;height:40px;border-radius:6px;line-height:40px;transition:all 0.3s ease}
+
+.user__lang:hover {
+  background: var(--bg-button);
+  transform: scale(1.05);
+}.user__photo{max-width:140px;height:140px;margin:0 auto 18px}.user__name{font-size:30px;margin-bottom:5px}.user__position{line-height:21px}.media{margin-bottom:20px}.media.slide{margin-bottom:26px}.media__title{font-family:"SFUI Bold",sans-serif;margin-bottom:14px;font-size:12px}.media__item{position:relative;min-height:62px;margin-bottom:5px;border-radius:14px;display:flex;align-items:center;padding-right:55px;justify-content:space-between}.media__item:after{content:'';position:absolute;top:24px;right:20px;background:url(../img/arrow.svg) no-repeat;width:14px;height:14px}.media__item:last-child{margin-bottom:0}.media__text-icon{font-size:24px}.media__icon{width:48px;height:48px;position:absolute;top:7px;left:7px;display:flex;justify-content:center;align-items:center;border-radius:6px}.slider__href,.slider__item,.story,.to-top__arrow{position:relative}.media__icon.bg{background:var(--bg-button)}.slider__href{color:var(--text-secondary)!important}.to-top__banner{background:var(--bg-accent);color:var(--text-light)}[data-theme="dark"] .main__banner{background:#000!important}[data-theme="dark"] .media__item:after,[data-theme="dark"] .slider__item:before,[data-theme="dark"] .slider__href:before{filter:invert(1)}[data-theme="dark"] .story:before{filter:invert(1)}
+
+/* Базові стилі для SVG з transition */
+svg, img[src$=".svg"] {
+  transition: filter 0.3s ease;
+}
+
+/* Інверсія SVG в темній темі з виключеннями */
+[data-theme="dark"] svg:not(.theme-icon),
+[data-theme="dark"] img[src$=".svg"] {
+  filter: invert(1);
+}
+
+/* Виключення інверсії для логотипів місць роботи (без .bg класу) */
+[data-theme="dark"] .media__icon:not(.bg) img {
+  filter: none;
+}
+
+/* Примусове скидання фільтру для світлої теми */
+[data-theme="light"] svg,
+[data-theme="light"] img[src$=".svg"] {
+  filter: none;
+}
+
+[data-theme="light"] .media__icon img {
+  filter: none;
+}
+
+/* Автоматична інверсія для системної темної теми з виключеннями */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) svg:not(.theme-icon),
+  :root:not([data-theme="light"]) img[src$=".svg"] {
+    filter: invert(1);
+  }
+  
+  /* Виключення інверсії для логотипів місць роботи */
+  :root:not([data-theme="light"]) .media__icon:not(.bg) img {
+    filter: none;
+  }
+}
+
+/* Інверсія кнопок слайдерів в десктопній версії */
+@media screen and (min-width:445px) {
+  [data-theme="dark"] .slick-next,
+  [data-theme="dark"] .slick-prev {
+    filter: invert(1);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .slick-next,
+    :root:not([data-theme="light"]) .slick-prev {
+      filter: invert(1);
+    }
+  }
+}.slider__href:before,.slider__item:before{background:url("../img/arrow.svg") center no-repeat;width:14px;height:14px;content:'';position:absolute}.media__icon img{max-width:48px}.media__text{line-height:18.2px;padding-left:72px;padding-right:35px}.media__text i{opacity:.5;font-style:normal}.media__description{font-size:10px;font-weight:500;opacity:.5}.web-slider__link{padding:16px;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start}.slider.portfolio .slider link{padding:16px}.slider.portfolio .slider__item:before{content:none}.portfolio .slider__picture{margin-bottom:10px}.slick-dots{display:flex;align-items:center;justify-content:center;margin-top:7px}.slick-dots li button{font-size:0;width:8px;height:8px;border-radius:50%;background:#d9d9d9;border:none;outline:0;overflow:hidden}.slick-dots li::marker,.slick-dots li:after,.slick-dots li:before{content:none;display:none;background:red}.slick-dots li{border:none;overflow:hidden;margin:0 10px}.slider{margin-bottom:36px}.slider__item{min-height:215px;border-radius:14px;width:188px;margin:0 8px}.slider__item:before{top:16px;right:16px}.slider__link{padding:16px;display:block}.slider__icon{margin-bottom:12px;max-height:30px}.slider__picture{margin-bottom:10px;border-radius:7px}.slider__name{margin-bottom:12px;font-family:"SFUI Semibold",sans-serif}.slider__info{min-height:85px}.slider__text{line-height:20px;margin-bottom:16px;display:flex}.slider__href{width:100%;text-decoration:none;display:flex;color:#7f7f7f}.slider__href:before{bottom:0;right:0}.slick-next,.slick-prev{display:none!important;cursor:pointer}.story{padding:74px 16px 20px;border-radius:10px;width:100%;margin:0 auto 20px}.story:before{content:'';background:url("../img/quote.svg") center/28px no-repeat;-webkit-background-size:28px;position:absolute;top:30px;left:calc(50% - 14px);width:28px;height:24px}.story__info{margin-bottom:20px;line-height:20px;font-size:14px;font-family:"SFUI Medium",sans-serif}.story__info:last-child{margin-bottom:0}.to-top__banner{background:#000;color:#fff;font-size:11px;padding:15px 0;width:100%;display:block;text-decoration:none}.to-top__arrow{top:1px;font-size:14px}.web-slider{margin:auto}.web-slider .slider__item{width:200px}@media screen and (min-width:345px){.main__container{max-width:100%;padding:0 30px}}.slick-track{padding:9px 0}@media screen and (min-width:445px){.story{padding:74px 30px 20px}.portfolio.slider{margin-bottom:0}.slider.portfolio .slider__link{display:flex;flex-direction:row}.portfolio .slider__text{padding:0;line-height:150%}.slider__box{padding:0 0 0 16px;display:flex;flex-direction:column;justify-content:space-between}.slider__link{padding:20px}.slider.portfolio .slider__item{min-height:1px;margin:0}.slick-next,.slick-prev{display:block!important;border:none;position:absolute;top:0;background:url("../img/arrow2.svg") center/cover no-repeat;width:8px;height:16px;font-size:0;outline:0}.slick-prev{transform:scaleX(-1);right:35px;left:auto}.slick-disabled{opacity:.5;cursor:default}.slick-next{right:10px}.main__container,.story{max-width:580px}.web-slider .slider__item{width:250px}.portfolio,.web-slider{width:100%;padding-top:27px}.portfolio .slider__picture{margin-bottom:0;display:block;width:56%}.media__title.slider--opt{margin-bottom:-16px}.media__container{max-width:540px;margin:auto;overflow:hidden}}@media screen and (min-width:479px){.slider .slick-list{overflow:visible}body{overflow-x:hidden}.web-slider .slick-active{box-shadow:none}.web-slider{max-width:580px}}
+.slider__status{font-family:monospace;font-size:10px;color:var(--text-secondary);margin-top:auto;padding-top:4px}
+.slider__item--inactive:before{content:none}
+.slider__item--inactive .web-slider__link{cursor:default;opacity:.6}
