@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="canonical" href="https://drozdorus.com/" />
     <link rel="alternate" hreflang="en" href="https://drozdorus.com/" />
@@ -37,16 +37,52 @@
     <meta property="og:url" content="https://drozdorus.com/" />
     <meta property="og:title" content="Ruslan Drozdov: Investor, Entrepreneur, Founder of Calma, Partner at Adventures Lab" />
     <meta property="og:description" content="Ruslan Drozdov is an investor and investment management specialist, co-founder of the Adventures Lab venture fund, and partner at the CLUST venture builder. Founder of Calma Agency." />
-    <meta property="og:image" content="img/metaimg.png" />
+    <meta property="og:image" content="https://drozdorus.com/img/metaimg.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://drozdorus.com/" />
     <meta property="twitter:title" content="Ruslan Drozdov: Investor, Entrepreneur, Founder of Calma, Partner at Adventures Lab" />
     <meta property="twitter:description" content="Ruslan Drozdov is an investor and investment management specialist, co-founder of the Adventures Lab venture fund, and partner at the CLUST venture builder. Founder of Calma Agency." />
-    <meta property="twitter:image" content="img/metaimg.png" />
+    <meta property="twitter:image" content="https://drozdorus.com/img/metaimg.png" />
+
+    <!-- Apply theme before CSS paints to avoid flash of wrong theme.
+         Mirrors the logic in js/theme.js so the first paint already matches. -->
+    <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme-preference');
+        var theme = (stored === 'dark' || stored === 'light')
+          ? stored
+          : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (_) {}
+    })();
+    </script>
 
     <link rel="stylesheet" href="css/main.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ruslan Drozdov",
+      "url": "https://drozdorus.com/",
+      "image": "https://drozdorus.com/img/user1.png",
+      "jobTitle": "Investor, Entrepreneur, Founder of Calma, Partner at Adventures Lab",
+      "sameAs": [
+        "https://www.linkedin.com/in/drozdorus/",
+        "https://www.facebook.com/drozdorus/",
+        "https://www.instagram.com/drozdorus",
+        "https://t.me/drozdorus"
+      ],
+      "worksFor": [
+        { "@type": "Organization", "name": "Calma", "url": "https://calma.io/" },
+        { "@type": "Organization", "name": "Adventures Lab", "url": "https://adventureslab.vc/" },
+        { "@type": "Organization", "name": "Astroid", "url": "https://astroid.xyz/" }
+      ]
+    }
+    </script>
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -62,7 +98,7 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 <main class="main" id="top">
-        <div class="main__banner"><a target="_blank" href="https://u24.gov.ua/">Don't forget to support Ukraine  🇺🇦</a></div>
+        <div class="main__banner"><a target="_blank" rel="noopener noreferrer" href="https://u24.gov.ua/">Don't forget to support Ukraine  🇺🇦</a></div>
     <div class="main__container" id="container">
         <div class="user">
             <button class="user__theme" id="themeToggle" aria-label="Toggle theme">
@@ -90,39 +126,39 @@
         </div>
         <!--<div class="media">
             <h2 class="media__title">HOT 🔥</h2>
-            <a target="_blank" href="https://jobs.dou.ua/companies/synco/vacancies/335712/" class="media__item">
+            <a target="_blank" rel="noopener noreferrer" href="https://jobs.dou.ua/companies/synco/vacancies/335712/" class="media__item">
                 <span class="media__icon"><span class="media__text-icon">👨‍🎨</span></span>
                 <span class="media__text">Hiring: AI Creative Producer</span>
             </a>
         </div>-->
         <div class="media">
             <h2 class="media__title">Socials</h2>
-            <a  target="_blank" href="https://www.linkedin.com/in/drozdorus/" class="media__item">
+            <a  target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/drozdorus/" class="media__item">
                 <span class="media__icon bg"><img src="img/linkedin.svg" alt=""></span>
                 <span class="media__text">Linkedin</span>
             </a>
-            <a  target="_blank" href="https://www.facebook.com/drozdorus/" class="media__item">
+            <a  target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/drozdorus/" class="media__item">
                 <span class="media__icon bg"><img src="img/fb.svg" alt=""></span>
                 <span class="media__text">Facebook</span>
             </a>
-            <a  target="_blank" href="https://www.instagram.com/drozdorus" class="media__item">
+            <a  target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/drozdorus" class="media__item">
                 <span class="media__icon bg"><img src="img/insta.svg" alt=""></span>
                 <span class="media__text">Instagram</span>
             </a>
         </div>
         <div class="media">
             <h2 class="media__title">Now</h2>
-            <a  target="_blank" href="https://calma.io/" class="media__item">
+            <a  target="_blank" rel="noopener noreferrer" href="https://calma.io/" class="media__item">
                 <span class="media__icon"><img src="img/calma.svg" alt=""></span>
                 <span class="media__text"><i class="gray">Founder</i>Calma</span>
                 <span class="media__description">marketing agency</span>
             </a>
-            <a  target="_blank" href="https://adventureslab.vc/" class="media__item">
+            <a  target="_blank" rel="noopener noreferrer" href="https://adventureslab.vc/" class="media__item">
                 <span class="media__icon"><img src="img/ad.svg" alt=""></span>
                 <span class="media__text"><i class="gray">Partner</i>Adventures Lab</span>
                 <span class="media__description">vc fund</span>
             </a>
-            <a  target="_blank" href="https://astroid.xyz/" class="media__item">
+            <a  target="_blank" rel="noopener noreferrer" href="https://astroid.xyz/" class="media__item">
                 <span class="media__icon"><img src="img/ast.svg" alt=""></span>
                 <span class="media__text"><i class="gray">Partner</i>Astroid</span>
                 <span class="media__description">web3 venture studio</span>
@@ -130,17 +166,17 @@
         </div>
         <div class="media">
             <h2 class="media__title">Before</h2>
-            <a  target="_blank" href="https://clust.team/" class="media__item">
+            <a  target="_blank" rel="noopener noreferrer" href="https://clust.team/" class="media__item">
                 <span class="media__icon"><img src="img/clust.svg" alt=""></span>
                 <span class="media__text"><i class="gray">Venture Partner</i>CLUST</span>
                 <span class="media__description">venture builder</span>
             </a>
-            <a  target="_blank" href="https://everad.com/" class="media__item">
+            <a  target="_blank" rel="noopener noreferrer" href="https://everad.com/" class="media__item">
                 <span class="media__icon"><img src="img/ev.svg" alt=""></span>
                 <span class="media__text"><i class="gray">COO</i>Everad</span>
                 <span class="media__description">affiliate network</span>
             </a>
-            <a  target="_blank" href="https://traffinad.com/" class="media__item">
+            <a  target="_blank" rel="noopener noreferrer" href="https://traffinad.com/" class="media__item">
                 <span class="media__icon"><img src="img/circ.svg" alt=""></span>
                 <span class="media__text"><i class="gray">Founder</i>Traffinad</span>
                 <span class="media__description">mediabuying agency</span>
@@ -153,7 +189,7 @@
     <div class="media__container">
         <ul class="slider web-slider">
             <li class="slider__item">
-                <a class="web-slider__link" target="_blank" href="https://yope.app/">
+                <a class="web-slider__link" target="_blank" rel="noopener noreferrer" href="https://yope.app/">
                     <img src="img/i6.svg" alt="" class="slider__icon">
                     <p class="slider__name">YOPE</p>
                     <p class="slider__info">Photos live only when shared</p>
@@ -161,7 +197,7 @@
                 </a>
             </li>
             <li class="slider__item">
-                <a class="web-slider__link" target="_blank" href="https://reface.ai/">
+                <a class="web-slider__link" target="_blank" rel="noopener noreferrer" href="https://reface.ai/">
                     <img src="img/i1.svg" alt="" class="slider__icon">
                     <p class="slider__name">Reface</p>
                     <p class="slider__info">AI-native mobile apps that reimagine everyday life</p>
@@ -169,7 +205,7 @@
                 </a>
             </li>
             <li class="slider__item">
-                <a class="web-slider__link" target="_blank" href="https://onenotary.com/">
+                <a class="web-slider__link" target="_blank" rel="noopener noreferrer" href="https://onenotary.com/">
                     <img src="img/i2.svg" alt="" class="slider__icon">
                     <p class="slider__name">OneNotary</p>
                     <p class="slider__info">24/7 online notarization — legal, fast, secure</p>
@@ -177,7 +213,7 @@
                 </a>
             </li>
             <li class="slider__item">
-                <a class="web-slider__link" target="_blank" href="https://www.deckrobot.com/">
+                <a class="web-slider__link" target="_blank" rel="noopener noreferrer" href="https://www.deckrobot.com/">
                     <img src="img/dr.svg" alt="" class="slider__icon">
                     <p class="slider__name">DeckRobot</p>
                     <p class="slider__info">Get your branded slides in one click with AI</p>
@@ -185,7 +221,7 @@
                 </a>
             </li>
             <li class="slider__item">
-                <a class="web-slider__link" target="_blank" href="https://pibox.com/">
+                <a class="web-slider__link" target="_blank" rel="noopener noreferrer" href="https://pibox.com/">
                     <img src="img/pi.svg" alt="" class="slider__icon">
                     <p class="slider__name">Pibox</p>
                     <p class="slider__info">Finalize your audio and video projects faster than ever</p>
@@ -212,7 +248,7 @@
     <div class="media__container">
         <ul class="slider web-slider">
             <li class="slider__item">
-                <a class="web-slider__link" target="_blank" href="https://utexo.com/">
+                <a class="web-slider__link" target="_blank" rel="noopener noreferrer" href="https://utexo.com/">
                     <img src="img/utexo.svg" alt="" class="slider__icon">
                     <p class="slider__name">Utexo</p>
                     <p class="slider__info">Move USDT instantly and privately on Bitcoin via Lightning</p>
@@ -220,7 +256,7 @@
                 </a>
             </li>
             <li class="slider__item">
-                <a class="web-slider__link" target="_blank" href="https://www.opendelta.com/">
+                <a class="web-slider__link" target="_blank" rel="noopener noreferrer" href="https://www.opendelta.com/">
                     <img src="img/i4.svg" alt="" class="slider__icon">
                     <p class="slider__name">Open Delta</p>
                     <p class="slider__info">OD’s perpetual bond is an on-chain asset with downside protection and continuously accruing yield</p>
@@ -261,7 +297,7 @@
             <div class="media__container">
                 <ul class="slider portfolio">
                     <li class="slider__item">
-                        <a target="_blank" href="https://bitcoinmagazine.com/news/utexo-raises-7-5m-to-launch-bitcoin" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://bitcoinmagazine.com/news/utexo-raises-7-5m-to-launch-bitcoin" class="slider__link">
                             <img src="img/news13.jpeg" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">Utexo raises $7.5M to bring USDT back home on Bitcoin</span>
@@ -270,7 +306,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://www.nansen.ai/post/nx8-a-tokenized-layer-1-index-built-for-the-future-of-finance" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.nansen.ai/post/nx8-a-tokenized-layer-1-index-built-for-the-future-of-finance" class="slider__link">
                             <img src="img/news12.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">OpenDelta signed the strategic partnership with Nansen to introduce NX8 — tokenized Layer-1 index</span>
@@ -279,7 +315,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://www.founderstoday.news/reface-secures-over-15m-growth-capital/" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.founderstoday.news/reface-secures-over-15m-growth-capital/" class="slider__link">
                             <img src="img/news11.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">Reface secures €15.2 million in non-dilutive funding</span>
@@ -288,7 +324,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://clust.team/co-founders-program/" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://clust.team/co-founders-program/" class="slider__link">
                             <img src="img/news10.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">CLUST has anounced an educational programm for Startup Founders</span>
@@ -297,7 +333,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://www.theblock.co/post/368113/opendelta-launches-og30-the-crypto-market-in-one-token" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.theblock.co/post/368113/opendelta-launches-og30-the-crypto-market-in-one-token" class="slider__link">
                             <img src="img/news9.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">OpenDelta Launches OG30 – The Crypto Market in One Token</span>
@@ -306,7 +342,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://www.theblock.co/post/345884/opendelta-index-products-to-launch-in-partnership-with-gmci" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.theblock.co/post/345884/opendelta-index-products-to-launch-in-partnership-with-gmci" class="slider__link">
                             <img src="img/news8.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">OpenDelta Index Products To Launch In Partnership With GMCI</span>
@@ -315,7 +351,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://techcrunch.com/2025/02/24/yope-is-sparking-genz-and-vc-interest-with-an-instagram-like-app-for-private-groups/" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://techcrunch.com/2025/02/24/yope-is-sparking-genz-and-vc-interest-with-an-instagram-like-app-for-private-groups/" class="slider__link">
                             <img src="img/news7.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">Yope has raised a seed round with valuation of $50M</span>
@@ -324,7 +360,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://atlas21.com/fulgur-ventures-and-tether-invest-in-a-company-dedicated-to-rgb-development/" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://atlas21.com/fulgur-ventures-and-tether-invest-in-a-company-dedicated-to-rgb-development/" class="slider__link">
                             <img src="img/news6.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">ThunderStack attracts investments from Tether and Fulgur Ventures</span>
@@ -333,7 +369,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://x.com/ltvprotocol/status/1846965341899182268" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://x.com/ltvprotocol/status/1846965341899182268" class="slider__link">
                             <img src="img/news4.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">LTV Protocol published a paper about curatorless vaults</span>
@@ -342,7 +378,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://www.coindesk.com/business/2024/04/26/bitcoin-linked-stablecoin-firm-opendelta-raises-25m/" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.coindesk.com/business/2024/04/26/bitcoin-linked-stablecoin-firm-opendelta-raises-25m/" class="slider__link">
                             <img src="img/news3.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">Bitcoin-Linked Stablecoin Firm OpenDelta Raises $2.5M, led by 6th Man Ventures</span>
@@ -351,7 +387,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://www.businesswire.com/news/home/20240326274642/en/OneNotary-Raises-5-Million-Series-A-%E2%80%94-Enters-Partnership-with-DocuSign" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.businesswire.com/news/home/20240326274642/en/OneNotary-Raises-5-Million-Series-A-%E2%80%94-Enters-Partnership-with-DocuSign" class="slider__link">
                             <img src="img/news1.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">OneNotary raises $5M in Series A round from Jackson Square Ventures and DocuSign Founder</span>
@@ -360,7 +396,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://www.theblock.co/post/248104/stroom-raise-bitcoin-liquid-staking-lightning-network" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.theblock.co/post/248104/stroom-raise-bitcoin-liquid-staking-lightning-network" class="slider__link">
                             <img src="img/news2.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">Stroom Network raises $3.5 million from Greenfield and others to launch Bitcoin 'liquid staking' on Lightning</span>
@@ -381,7 +417,7 @@
             <div class="media__container">
                 <ul class="slider portfolio">
                     <li class="slider__item">
-                        <a target="_blank" href="https://mc.today/uk/yakih-pomilok-pripuskayutsya-startaperi-v-adventures-lab-spalah-i-spirio-podililis-dumkami/" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://mc.today/uk/yakih-pomilok-pripuskayutsya-startaperi-v-adventures-lab-spalah-i-spirio-podililis-dumkami/" class="slider__link">
                             <img src="img/media7.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">The most popular mistakes startups might make (ua)</span>
@@ -390,7 +426,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://mc.today/uk/yakih-startapiv-ne-vistachaye-v-ukrayini-ta-yaki-nishi-budut-najperspektivnishimi-venchur-bilderi/" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://mc.today/uk/yakih-startapiv-ne-vistachaye-v-ukrayini-ta-yaki-nishi-budut-najperspektivnishimi-venchur-bilderi/" class="slider__link">
                             <img src="img/media6.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">Perspective startups' niches for 2025 (ua)</span>
@@ -399,7 +435,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://mc.today/uk/beholder-mark-i-ne-tilki-venchur-bilderi-nazvali-ukrayinski-startapi-yaki-yih-vrazili-u-2024-mu/" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://mc.today/uk/beholder-mark-i-ne-tilki-venchur-bilderi-nazvali-ukrayinski-startapi-yaki-yih-vrazili-u-2024-mu/" class="slider__link">
                             <img src="img/media5.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">The most attractive Ukrainian Startups in 2024 (ua)</span>
@@ -408,7 +444,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://speka.media/nepopulyarni-freimvorki-yaki-pidvishhat-efektivnist-upravlinnya-biznesom-pk423d" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://speka.media/nepopulyarni-freimvorki-yaki-pidvishhat-efektivnist-upravlinnya-biznesom-pk423d" class="slider__link">
                             <img src="img/media4.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">Unpopular frameworks to empower your productivity (ua)</span>
@@ -417,7 +453,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://mc.today/uk/blogs/vijna-yak-katalizator-zmin-perehid-vid-venchurnogo-investuvannya-do-venchur-bildyngu-ruslan-drozdov/" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://mc.today/uk/blogs/vijna-yak-katalizator-zmin-perehid-vid-venchurnogo-investuvannya-do-venchur-bildyngu-ruslan-drozdov/" class="slider__link">
                             <img src="img/media3.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">About the transition from pure investing to venture building (ua)</span>
@@ -426,7 +462,7 @@
                         </a>
                     </li>
                     <li class="slider__item">
-                        <a target="_blank" href="https://cases.media/en/article/sposobi-roboti-z-innovaciyami-dlya-uspishnogo-biznesu" class="slider__link">
+                        <a target="_blank" rel="noopener noreferrer" href="https://cases.media/en/article/sposobi-roboti-z-innovaciyami-dlya-uspishnogo-biznesu" class="slider__link">
                             <img src="img/media2.png" alt="" class="slider__picture">
                             <span class="slider__box">
                                 <span class="slider__text">Ways to deal with innovations for successful businesses (ua)</span>
@@ -443,7 +479,7 @@
     <div class="main__container">
         <div class="media">
             <h2 class="media__title">Scientificish Telegram Channel</h2>
-            <a  target="_blank" href="https://t.me/singularsimplicity" class="media__item">
+            <a  target="_blank" rel="noopener noreferrer" href="https://t.me/singularsimplicity" class="media__item">
                 <span class="media__icon bg"><img src="img/tg.svg" alt=""></span>
                 <span class="media__text">Singular Simplicity (ua)</span>
             </a>
@@ -464,7 +500,7 @@
     <div class="main__container">
         <div class="media">
             <h2 class="media__title">Got any questions?</h2>
-            <a  target="_blank" href="https://t.me/drozdorus" class="media__item">
+            <a  target="_blank" rel="noopener noreferrer" href="https://t.me/drozdorus" class="media__item">
                 <span class="media__icon bg"><img src="img/tg.svg" alt=""></span>
                 <span class="media__text">Telegram</span>
             </a>
