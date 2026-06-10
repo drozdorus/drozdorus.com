@@ -13,4 +13,6 @@ Cloudflare Pages, project `drozdorus-com` (`drozdorus-com.pages.dev`). DNS: `dro
 
 Deploy: push to `main` → Pages builds and publishes automatically. No GitHub Actions workflow in this repo.
 
-Known gaps (as of 2026-06-10): `www` subdomain is not attached to the Pages project (returns 522); no `404.html`, so unknown paths fall back to `index.html` with HTTP 200.
+Known gap (as of 2026-06-10): `www` subdomain is not attached to the Pages project (returns 522) — fix manually in the Cloudflare dashboard (Workers & Pages → `drozdorus-com` → Custom domains).
+
+Security headers (HSTS, CSP, etc.) live in `_headers`; unknown paths return a real 404 via `404.html`. Note: the repo is public and Pages serves every committed file — don't commit anything that shouldn't be world-readable.

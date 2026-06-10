@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Page not found — Ruslan Drozdov</title>
+    <link rel="icon" type="image/png" href="/img/favicon/favicon-32x32.png" sizes="32x32" />
+
+    <!-- Apply theme before CSS paints to avoid flash of wrong theme.
+         Mirrors the logic in js/theme.js so the first paint already matches. -->
+    <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme-preference');
+        var theme = (stored === 'dark' || stored === 'light')
+          ? stored
+          : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (_) {}
+    })();
+    </script>
+
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<main class="main">
+    <div class="main__container">
+        <div class="user">
+            <h1 class="user__name">404</h1>
+            <div class="user__position">This page doesn't exist.</div>
+        </div>
+        <article class="story">
+            <p class="story__info"><a href="/">← Back to the homepage</a> / <a href="/ua/">Українська версія</a></p>
+        </article>
+    </div>
+</main>
+</body>
+</html>
