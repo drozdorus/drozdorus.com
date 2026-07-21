@@ -123,3 +123,10 @@ svg, img[src$=".svg"] {
 .slider__status{font-family:monospace;font-size:10px;color:var(--text-secondary);margin-top:auto;padding-top:4px}.slider__status--live{color:#34c759}
 .slider__item--inactive:before{content:none}
 .slider__item--inactive .web-slider__link{cursor:default;opacity:.6}
+
+/* Footer social links (SERM cross-links) */
+.site-footer{padding-bottom:22px}
+.site-footer__socials{display:flex;align-items:center;justify-content:center;gap:18px}
+.site-footer__icon{display:inline-flex;color:var(--text-secondary);transition:opacity .2s ease}
+.site-footer__icon svg{display:block}
+.site-footer__icon:hover,.site-footer__icon:focus-visible{opacity:.6}
