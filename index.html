@@ -66,7 +66,19 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfilePage",
+          "@id": "https://drozdorus.com/#webpage",
+          "url": "https://drozdorus.com/",
+          "name": "Ruslan Drozdov",
+          "inLanguage": "en",
+          "mainEntity": { "@id": "https://drozdorus.com/#person" }
+        },
+        {
       "@type": "Person",
+      "@id": "https://drozdorus.com/#person",
+      "mainEntityOfPage": { "@id": "https://drozdorus.com/#webpage" },
       "name": "Ruslan Drozdov",
       "alternateName": ["Руслан Дроздов", "drozdorus"],
       "nationality": { "@type": "Country", "name": "Ukraine" },
@@ -89,6 +101,8 @@
       "worksFor": [
         { "@type": "Organization", "name": "Calma", "url": "https://calma.io/" },
         { "@type": "Organization", "name": "Adventures Lab", "url": "https://adventureslab.vc/" }
+      ]
+        }
       ]
     }
     </script>
