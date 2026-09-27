@@ -130,3 +130,12 @@ svg, img[src$=".svg"] {
 .site-footer__icon{display:inline-flex;color:var(--text-secondary);transition:opacity .2s ease}
 .site-footer__icon svg{display:block}
 .site-footer__icon:hover,.site-footer__icon:focus-visible{opacity:.6}
+/* News/publications sliders: equal-height cards and a gap between slides (margin on the slide, compensated on the list so the visible card keeps full width) */
+.portfolio .slick-list{margin-right:-20px}
+.portfolio .slick-track{display:flex}
+.slider.portfolio .slick-slide{height:auto;margin-right:20px}
+.portfolio .slider__link{height:100%}
+.portfolio .slider__picture{align-self:flex-start;flex-shrink:0}
+@media screen and (max-width:444px){.portfolio .slider__link{display:flex;flex-direction:column}.portfolio .slider__box{flex:1;display:flex;flex-direction:column}.portfolio .slider__href{margin-top:auto}}
+/* 13 dots at 28px each overflowed the 328px mobile row and got squashed into half-circles */
+.slick-dots li{flex-shrink:0;margin:0 6px}
