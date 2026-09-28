@@ -139,6 +139,3 @@ svg, img[src$=".svg"] {
 @media screen and (max-width:444px){.portfolio .slider__link{display:flex;flex-direction:column}.portfolio .slider__box{flex:1;display:flex;flex-direction:column}.portfolio .slider__href{margin-top:auto}}
 /* 13 dots at 28px each overflowed the 328px mobile row and got squashed into half-circles */
 .slick-dots li{flex-shrink:0;margin:0 6px}
-
-/* iOS flashes a grey tap highlight on any link where a scroll gesture starts; sliders already suppress it via .slick-slider, list buttons did not */
-a{-webkit-tap-highlight-color:transparent}
