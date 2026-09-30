@@ -139,3 +139,9 @@ svg, img[src$=".svg"] {
 @media screen and (max-width:444px){.portfolio .slider__link{display:flex;flex-direction:column}.portfolio .slider__box{flex:1;display:flex;flex-direction:column}.portfolio .slider__href{margin-top:auto}}
 /* 13 dots at 28px each overflowed the 328px mobile row and got squashed into half-circles */
 .slick-dots li{flex-shrink:0;margin:0 6px}
+/* Photos: two studio portraits side by side, each linking to the full-size file */
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.photos__item{margin:0}
+.photos__link{display:block;border-radius:10px;overflow:hidden;background:var(--bg-secondary)}
+.photos__img{display:block;width:100%;height:auto}
+.photos__caption{margin-top:8px;font-size:12px;line-height:18px;color:var(--text-secondary);text-align:center}
