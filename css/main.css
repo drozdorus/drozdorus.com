@@ -124,7 +124,7 @@ svg, img[src$=".svg"] {
 .slider__item--inactive:before{content:none}
 .slider__item--inactive .web-slider__link{cursor:default;opacity:.6}
 
-/* Footer social links (SERM cross-links) */
+/* Footer social links */
 .site-footer{padding-bottom:22px}
 .site-footer__socials{display:flex;align-items:center;justify-content:center;gap:18px}
 .site-footer__icon{display:inline-flex;color:var(--text-secondary);transition:opacity .2s ease}
