@@ -13,7 +13,7 @@ Cloudflare Pages, project `drozdorus-com` (`drozdorus-com.pages.dev`). DNS: `dro
 
 Deploy: push to `main` → Pages builds and publishes automatically. No GitHub Actions workflow in this repo.
 
-Known gap (as of 2026-06-10): `www` subdomain is not attached to the Pages project (returns 522) — fix manually in the Cloudflare dashboard (Workers & Pages → `drozdorus-com` → Custom domains).
+`www.drozdorus.com` → `https://drozdorus.com` 301 (path + query kept) via Cloudflare Redirect Rule `www to apex` (zone ruleset `84eecdbb…`, phase `http_request_dynamic_redirect`, created 2026-10-11). Before that, www served a duplicate copy of the site.
 
 Security headers (HSTS, CSP, etc.) live in `_headers`; unknown paths return a real 404 via `404.html`. Note: the repo is public and Pages serves every committed file — don't commit anything that shouldn't be world-readable.
 
