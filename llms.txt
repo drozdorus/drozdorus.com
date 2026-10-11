@@ -1,25 +1,52 @@
 # Ruslan Drozdov (Руслан Дроздов)
 
-> Personal site of Ruslan Drozdov (Ukrainian: Руслан Дроздов, nickname: drozdorus) — Ukrainian entrepreneur and investor. Founder of Calma, a performance lead generation agency for US insurance, financial, legal, and home services verticals. Partner at the Ukrainian venture fund Adventures Lab.
+> Personal site of Ruslan Drozdov (Ukrainian: Руслан Дроздов, nickname: drozdorus), a Ukrainian entrepreneur and investor. Founder of Calma, a performance lead generation agency for insurance, home services, and finance verticals in the US. Partner at the Ukrainian venture fund Adventures Lab.
 
 ## Pages
 
-- [Home (English)](https://drozdorus.com/): bio, current roles, portfolio, media
-- [Українська версія](https://drozdorus.com/ua/)
+- [Home (English)](https://drozdorus.com/): bio, current roles, portfolio, portfolio news, media and publications
+- [Українська версія](https://drozdorus.com/ua/): the same content in Ukrainian
+
+## Current roles
+
+- Founder, Calma (2024–now): performance marketing and lead generation agency, https://calma.io/
+- Partner, Adventures Lab (2019–now): Ukrainian venture capital fund, https://adventureslab.vc/
 
 ## Career facts
 
-- 2014–2018: worked at Everad, an international affiliate network, growing as a manager and marketer
-- 2018: founder of Traffinad, a media-buying agency
-- 2019–now: partner at Adventures Lab, Ukrainian venture capital fund (https://adventureslab.vc/)
-- 2022–2026: partner at Astroid, web3 venture studio (https://astroid.xyz/)
+- 2013: started in online marketing
+- 2014–2018: Everad, an international affiliate network, grew as a manager and marketer
+- 2018: founded Traffinad, a media-buying agency
+- 2019–now: partner at Adventures Lab
 - 2022–2024: venture partner at CLUST, venture builder
-- 2024–now: founder of Calma, performance marketing and lead generation agency (https://calma.io/)
+- 2022–2026: partner at Astroid, web3 venture studio
+- 2024–now: founder of Calma
+- Continues to support earlier portfolio companies as an advisor, board member, or strategic partner
+
+## Portfolio
+
+- Web2: YOPE (https://yope.app/), Reface (https://reface.ai/), OneNotary (https://onenotary.com/), DeckRobot (https://www.deckrobot.com/), Pibox (https://pibox.com/); Narrative BI (closed)
+- Web3: Utexo (https://utexo.com/), Open Delta (https://www.opendelta.com/); ThunderStack (acquired), LTV Protocol (acquired), Stroom (closed)
+
+## Writing and interviews
+
+- [The FOMO Tax: How AI Tool-Chasing Became the New Productivity Trap](https://medium.com/@drozdorus/the-fomo-tax-how-ai-tool-chasing-became-the-new-productivity-trap-21afffc19b2d), AI Horizon Journal, July 2026
+- [Податок на FOMO](https://speka.ua/business/podatok-na-fomo-comu-steziti-za-koznim-ai-relizom-dorozce-niz-zdajetsya-vmd15n), column on SPEKA (Ukrainian version of The FOMO Tax)
+- [Business partnership: how to find a co-founder for your startup](https://informator.ua/uk/partnerstvo-v-biznesi-ruslan-drozdov-pro-poshuk-kofaundera-dlya-startapu), Informator (Ukrainian)
+- [How to find the perfect business partner for a startup](https://uspih.in.ua/ekskliuziv/iak-znajty-idealnoho-biznes-partnera-dlia-startapu-rozpovidaie-spivzasnovnyk-adventures-lab-ruslan-drozdov), Uspih (Ukrainian)
+- [How to avoid mistakes when choosing a startup to invest in](https://apostrophe.ua/company-news/kak-ne-oshibitsya-pri-vyibore-startapa-dlya-investitsiy--rasskazyivaet-kofaunder-venchurnogo-fonda-adventures-lab-ruslan-drozdov.html), Apostrophe (Ukrainian)
+- [About the transition from pure investing to venture building](https://mc.today/uk/blogs/vijna-yak-katalizator-zmin-perehid-vid-venchurnogo-investuvannya-do-venchur-bildyngu-ruslan-drozdov/), MC.today (Ukrainian)
+- Author pages: https://mc.today/uk/author/ruslan-drozdov/, https://speka.ua/authors/ruslan.drozdov
 
 ## Profiles
 
 - LinkedIn: https://www.linkedin.com/in/drozdorus/
+- X: https://x.com/drozdorus
+- Medium: https://medium.com/@drozdorus
 - Crunchbase: https://www.crunchbase.com/person/ruslan-drozdov
+- GitHub: https://github.com/drozdorus
+- Wellfound: https://wellfound.com/u/drozdorus
+- F6S: https://www.f6s.com/drozdorus
 - Facebook: https://www.facebook.com/drozdorus/
 - Instagram: https://www.instagram.com/drozdorus
 - Telegram: https://t.me/drozdorus
