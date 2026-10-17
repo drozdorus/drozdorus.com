@@ -139,3 +139,12 @@ svg, img[src$=".svg"] {
 @media screen and (max-width:444px){.portfolio .slider__link{display:flex;flex-direction:column}.portfolio .slider__box{flex:1;display:flex;flex-direction:column}.portfolio .slider__href{margin-top:auto}}
 /* 13 dots at 28px each overflowed the 328px mobile row and got squashed into half-circles */
 .slick-dots li{flex-shrink:0;margin:0 6px}
+
+/* Phones: the role/name column gets the width, the meta column stays on one line per item */
+@media screen and (max-width:444px){
+  .media__item{padding-right:38px}
+  .media__item:after{right:16px}
+  .media__text{padding-left:64px;padding-right:6px;font-size:13.5px;line-height:17px}
+  .media__description,.media__year{font-size:9.5px}
+  .media__meta{flex-shrink:0;text-align:right}
+}
