@@ -33,6 +33,8 @@
 
 ## Writing and interviews
 
+- [25 People or Agents: Where AI Really Belongs in a Performance Business](https://medium.com/@drozdorus/25-people-or-agents-where-ai-really-belongs-in-a-performance-business-71c285251df5), column on Medium, November 2026
+- [25 людей чи агенти: куди насправді ставити AI у performance-бізнесі](https://speka.ua/business/25-lyudei-ci-agenti-kudi-naspravdi-staviti-ai-u-performance-biznesi-v4y0de), column on SPEKA, November 2026 (Ukrainian version)
 - [The FOMO Tax: How AI Tool-Chasing Became the New Productivity Trap](https://medium.com/@drozdorus/the-fomo-tax-how-ai-tool-chasing-became-the-new-productivity-trap-21afffc19b2d), AI Horizon Journal, July 2026
 - [Податок на FOMO](https://speka.ua/business/podatok-na-fomo-comu-steziti-za-koznim-ai-relizom-dorozce-niz-zdajetsya-vmd15n), column on SPEKA (Ukrainian version of The FOMO Tax)
 - [Business partnership: how to find a co-founder for your startup](https://informator.ua/uk/partnerstvo-v-biznesi-ruslan-drozdov-pro-poshuk-kofaundera-dlya-startapu), Informator (Ukrainian)
