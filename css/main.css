@@ -1,3 +1,9 @@
+/* Smooth in-page scrolling for the "to top" link (replaces the old
+   jQuery $("html,body").animate() from the pre-refresh main.js). */
+@media (prefers-reduced-motion:no-preference){
+  html{scroll-behavior:smooth}
+}
+
 /* CSS Variables for Theme System */
 :root {
   --bg-primary: #f3f3f1;
@@ -21,7 +27,7 @@
   --border-color: #3a3a3c;
 }
 
-*,.slick-slider{box-sizing:border-box}.user__lang,.user__name,.user__theme{font-family:"Geist Variable",sans-serif;font-weight:600}.user__position,body{font-family:"Geist Variable",sans-serif;font-weight:500}.main__banner,.slick-dots li.slick-active button{background:var(--bg-accent)}*,.portfolio .slick-track{padding:0}.main__banner,.to-top__banner,.user,.user__lang,.user__theme{text-align:center}*,.slider.portfolio .slider__item{margin:0}@font-face{font-family:"Geist Variable";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/Geist-Variable-latin.woff2") format("woff2-variations");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Geist Variable";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/Geist-Variable-cyrillic.woff2") format("woff2-variations");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}.slick-list,.slick-slider,.slick-track{position:relative;display:block}.slick-slider{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none;-khtml-user-select:none;-ms-touch-action:pan-y;touch-action:pan-y;-webkit-tap-highlight-color:transparent}.slick-list{overflow:hidden;margin:0;padding:0}.slick-list:focus{outline:0}.slick-list.dragging{cursor:pointer;cursor:hand}.slick-slider .slick-list,.slick-slider .slick-track{-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.slick-track{top:0;left:0;margin-left:auto;margin-right:auto}.slick-track:after,.slick-track:before{display:table;content:''}.slick-track:after{clear:both}.slick-loading .slick-slide,.slick-loading .slick-track{visibility:hidden}.slick-slide{display:none;float:left;height:100%;min-height:1px}[dir=rtl] .slick-slide{float:right}.media__text i,.slick-initialized .slick-slide,.slick-slide img,.user__photo,.user__photo img{display:block}.slick-arrow.slick-hidden,.slick-slide.slick-loading img{display:none}.slick-slide.dragging img{pointer-events:none}.slick-vertical .slick-slide{display:block;height:auto;border:1px solid transparent}/* Theme Toggle Button Styles - простий постійний фон */
+*{box-sizing:border-box}.user__lang,.user__name,.user__theme{font-family:"Geist Variable",sans-serif;font-weight:600}.user__position,body{font-family:"Geist Variable",sans-serif;font-weight:500}.main__banner{background:var(--bg-accent)}*{padding:0}.main__banner,.to-top__banner,.user,.user__lang,.user__theme{text-align:center}*{margin:0}@font-face{font-family:"Geist Variable";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/Geist-Variable-latin.woff2") format("woff2-variations");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Geist Variable";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/Geist-Variable-cyrillic.woff2") format("woff2-variations");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}.media__text i,.user__photo,.user__photo img{display:block}/* Theme Toggle Button Styles - простий постійний фон */
 .user__theme {
   position: absolute;
   top: 50px;
@@ -109,20 +115,7 @@ svg, img[src$=".svg"] {
   }
 }
 
-/* Інверсія кнопок слайдерів в десктопній версії */
-@media screen and (min-width:445px) {
-  [data-theme="dark"] .slick-next,
-  [data-theme="dark"] .slick-prev {
-    filter: invert(1);
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .slick-next,
-    :root:not([data-theme="light"]) .slick-prev {
-      filter: invert(1);
-    }
-  }
-}.slider__href:before,.slider__item:before{background:url("../img/arrow.svg") center no-repeat;width:14px;height:14px;content:'';position:absolute}.media__icon img{max-width:48px}.media__text{line-height:18.2px;padding-left:72px;padding-right:35px}.media__text i{opacity:.62;font-style:normal}.media__description{font-size:12px;font-weight:500;opacity:.62}.media__meta{display:flex;flex-direction:column;align-items:flex-end;gap:3px}.media__year{font-size:12px;font-weight:500;opacity:.62}.web-slider__link{padding:16px;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start}.slider.portfolio .slider link{padding:16px}.slider.portfolio .slider__item:before{content:none}.portfolio .slider__picture{margin-bottom:10px}.slick-dots{display:flex;align-items:center;justify-content:center;margin-top:7px}.slick-dots li button{font-size:0;width:8px;height:8px;border-radius:50%;background:#d9d9d9;border:none;outline:0;overflow:hidden}.slick-dots li::marker,.slick-dots li:after,.slick-dots li:before{content:none;display:none;background:red}.slick-dots li{border:none;overflow:hidden;margin:0 10px}.slider{margin-bottom:36px}.slider__item{min-height:215px;border-radius:14px;width:188px;margin:0 8px}.slider__item:before{top:16px;right:16px}.slider__link{padding:16px;display:block}.slider__icon{margin-bottom:12px;max-height:30px}.slider__picture{margin-bottom:10px;border-radius:7px}.slider__name{margin-bottom:12px;font-family:"Geist Variable",sans-serif;font-weight:600}.slider__info{min-height:85px}.slider__text{line-height:20px;margin-bottom:16px;display:flex}.slider__href{width:100%;text-decoration:none;display:flex;color:#7f7f7f}.slider__href:before{bottom:0;right:0}.slick-next,.slick-prev{display:none!important;cursor:pointer}.story{padding:74px 16px 20px;border-radius:10px;width:100%;margin:0 auto 20px}.story:before{content:'';background:url("../img/quote.svg") center/28px no-repeat;-webkit-background-size:28px;position:absolute;top:30px;left:calc(50% - 14px);width:28px;height:24px}.story__info{margin-bottom:20px;line-height:24px;font-size:16px;font-family:"Geist Variable",sans-serif;font-weight:500}.story__info:last-child{margin-bottom:0}.to-top__banner{background:#000;color:#fff;font-size:11px;padding:15px 0;width:100%;display:block;text-decoration:none}.to-top__arrow{top:1px;font-size:14px}.web-slider{margin:auto}.web-slider .slider__item{width:200px}@media screen and (min-width:345px){.main__container{max-width:100%;padding:0 30px}}.slick-track{padding:9px 0}@media screen and (min-width:445px){.story{padding:74px 30px 20px}.portfolio.slider{margin-bottom:0}.slider.portfolio .slider__link{display:flex;flex-direction:row}.portfolio .slider__text{padding:0;line-height:150%}.slider__box{padding:0 0 0 16px;display:flex;flex-direction:column;justify-content:space-between}.slider__link{padding:20px}.slider.portfolio .slider__item{min-height:1px;margin:0}.slick-next,.slick-prev{display:block!important;border:none;position:absolute;top:0;background:url("../img/arrow2.svg") center/cover no-repeat;width:8px;height:16px;font-size:0;outline:0}.slick-prev{transform:scaleX(-1);right:35px;left:auto}.slick-disabled{opacity:.5;cursor:default}.slick-next{right:10px}.main__container,.story{max-width:580px}.web-slider .slider__item{width:250px}.portfolio,.web-slider{width:100%;padding-top:27px}.portfolio .slider__picture{margin-bottom:0;display:block;width:56%}.media__title.slider--opt{margin-bottom:-16px}.media__container{max-width:540px;margin:auto;overflow:hidden}}@media screen and (min-width:479px){.slider .slick-list{overflow:visible}body{overflow-x:hidden}.web-slider .slick-active{box-shadow:none}.web-slider{max-width:580px}}
+.slider__href:before,.slider__item:before{background:url("../img/arrow.svg") center no-repeat;width:14px;height:14px;content:'';position:absolute}.media__icon img{max-width:48px}.media__text{line-height:18.2px;padding-left:72px;padding-right:35px}.media__text i{opacity:.62;font-style:normal}.media__description{font-size:12px;font-weight:500;opacity:.62}.media__meta{display:flex;flex-direction:column;align-items:flex-end;gap:3px}.media__year{font-size:12px;font-weight:500;opacity:.62}.web-slider__link{padding:16px;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start}.slider.portfolio .slider link{padding:16px}.slider.portfolio .slider__item:before{content:none}.portfolio .slider__picture{margin-bottom:10px}.slider{margin-bottom:36px}.slider__item{min-height:215px;border-radius:14px;width:188px;margin:0 8px}.slider__item:before{top:16px;right:16px}.slider__link{padding:16px;display:block}.slider__icon{margin-bottom:12px;max-height:30px}.slider__picture{margin-bottom:10px;border-radius:7px}.slider__name{margin-bottom:12px;font-family:"Geist Variable",sans-serif;font-weight:600}.slider__info{min-height:85px}.slider__text{line-height:20px;margin-bottom:16px;display:flex}.slider__href{width:100%;text-decoration:none;display:flex;color:#7f7f7f}.slider__href:before{bottom:0;right:0}.story{padding:74px 16px 20px;border-radius:10px;width:100%;margin:0 auto 20px}.story:before{content:'';background:url("../img/quote.svg") center/28px no-repeat;-webkit-background-size:28px;position:absolute;top:30px;left:calc(50% - 14px);width:28px;height:24px}.story__info{margin-bottom:20px;line-height:24px;font-size:16px;font-family:"Geist Variable",sans-serif;font-weight:500}.story__info:last-child{margin-bottom:0}.to-top__banner{background:#000;color:#fff;font-size:11px;padding:15px 0;width:100%;display:block;text-decoration:none}.to-top__arrow{top:1px;font-size:14px}.web-slider{margin:auto}.web-slider .slider__item{width:200px}@media screen and (min-width:345px){.main__container{max-width:100%;padding:0 30px}}@media screen and (min-width:445px){.story{padding:74px 30px 20px}.portfolio.slider{margin-bottom:0}.slider.portfolio .slider__link{display:flex;flex-direction:row}.portfolio .slider__text{padding:0;line-height:150%}.slider__box{padding:0 0 0 16px;display:flex;flex-direction:column;justify-content:space-between}.slider__link{padding:20px}.slider.portfolio .slider__item{min-height:1px;margin:0}.main__container,.story{max-width:580px}.web-slider .slider__item{width:250px}.portfolio .slider__picture{margin-bottom:0;display:block;width:56%}.media__title.slider--opt{margin-bottom:-16px}.media__container{max-width:540px;margin:auto}}@media screen and (min-width:479px){body{overflow-x:hidden}.web-slider{max-width:580px}}
 .slider__status{font-family:monospace;font-size:10px;color:var(--text-secondary);margin-top:auto;padding-top:4px}.slider__status--live{color:#34c759}
 .slider__item--inactive:before{content:none}
 .slider__item--inactive .web-slider__link{cursor:default;opacity:.6}
@@ -133,15 +126,11 @@ svg, img[src$=".svg"] {
 .site-footer__icon{display:inline-flex;color:var(--text-secondary);transition:opacity .2s ease}
 .site-footer__icon svg{display:block}
 .site-footer__icon:hover,.site-footer__icon:focus-visible{opacity:.6}
-/* News/publications sliders: equal-height cards and a gap between slides (margin on the slide, compensated on the list so the visible card keeps full width) */
-.portfolio .slick-list{margin-right:-20px}
-.portfolio .slick-track{display:flex}
-.slider.portfolio .slick-slide{height:auto;margin-right:20px}
+/* News/publications sliders: equal-height cards, gap between slides */
+.slider.portfolio .slider__item{margin-right:20px}
 .portfolio .slider__link{height:100%}
 .portfolio .slider__picture{align-self:flex-start;flex-shrink:0}
 @media screen and (max-width:444px){.portfolio .slider__link{display:flex;flex-direction:column}.portfolio .slider__box{flex:1;display:flex;flex-direction:column}.portfolio .slider__href{margin-top:auto}}
-/* 13 dots at 28px each overflowed the 328px mobile row and got squashed into half-circles */
-.slick-dots li{flex-shrink:0;margin:0 6px}
 
 /* Phones: the role/name column gets the width, the meta column stays on one line per item */
 @media screen and (max-width:444px){
@@ -264,4 +253,64 @@ svg, img[src$=".svg"] {
   ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){
     animation:none !important;
   }
+}
+
+/* Carousels (item 6): native horizontal scroll-snap rows instead of
+   slick/jQuery. .media__container is the positioning context for the
+   prev/next buttons (same spot slick used to insert them); .portfolio and
+   .web-slider are the scrollable tracks themselves. */
+.media__container{position:relative}
+.portfolio,.web-slider{width:100%;padding-top:27px}
+
+.slider{
+  display:flex;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+.slider::-webkit-scrollbar{display:none}
+.slider__item{scroll-snap-align:start;flex:0 0 auto}
+.slider.portfolio .slider__item{width:100%;flex:0 0 100%}
+.slider.portfolio .slider__item:last-child{margin-right:0}
+
+.carousel__arrow{
+  position:absolute;
+  top:0;
+  width:32px;
+  height:32px;
+  border:none;
+  background:url("../img/arrow2.svg") center/8px 16px no-repeat;
+  font-size:0;
+  outline-offset:2px;
+  cursor:pointer;
+  padding:0;
+}
+.carousel__arrow--prev{transform:scaleX(-1);right:28px;left:auto}
+.carousel__arrow--next{right:2px}
+.carousel__arrow:disabled{opacity:.35;cursor:default}
+[data-theme="dark"] .carousel__arrow{filter:invert(1)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .carousel__arrow{filter:invert(1)}
+}
+
+@media (hover:hover) and (pointer:fine){
+  .carousel__arrow{transition:opacity .18s ease}
+  .carousel__arrow:not(:disabled):hover{opacity:.6}
+  /* prev is mirrored (scaleX(-1)), so its hover nudge needs the opposite sign */
+  .carousel__arrow--prev:not(:disabled):hover{transform:scaleX(-1) translateX(2px)}
+  .carousel__arrow--next:not(:disabled):hover{transform:translateX(2px)}
+}
+
+/* Pulsing dot next to the "Live" status label */
+.slider__status--live{display:inline-flex;align-items:center;gap:5px}
+.slider__status-dot{width:6px;height:6px;border-radius:50%;background:currentColor;display:inline-block}
+@media (prefers-reduced-motion:no-preference){
+  .slider__status-dot{animation:status-pulse 1.8s ease-in-out infinite}
+}
+@keyframes status-pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.35;transform:scale(1.5)}
 }
