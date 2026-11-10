@@ -264,6 +264,7 @@ svg, img[src$=".svg"] {
 
 .slider{
   display:flex;
+  list-style:none;
   overflow-x:auto;
   overflow-y:hidden;
   scroll-snap-type:x mandatory;
