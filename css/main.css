@@ -286,6 +286,16 @@ body > .media.slide > .media__container{max-width:315px;margin:0 auto}
 /* Exactly two whole cards per view in the Web2/Web3 rows, one in the news
    rows; gaps come from `gap`, not per-card margins, so nothing peeks in. */
 .slider.web-slider .slider__item{width:auto;margin:0;flex:0 0 calc((100% - 16px) / 2);min-width:0}
+/* Phones: one whole card per view, like the news rows (owner, 2026-11-10) */
+@media screen and (max-width:444px){
+  .slider.web-slider{gap:20px}
+  /* full-width cards need far less height than the 2-up ones: drop the
+     fixed minimums so the row is as tall as its longest card (the track
+     stretches all cards to that height; the status stays at the bottom) */
+  .slider.web-slider .slider__item{flex-basis:100%;min-height:0}
+  .slider.web-slider .slider__info{min-height:0}
+  .slider.web-slider .slider__status{padding-top:16px}
+}
 .slider.portfolio .slider__item{width:auto;margin:0;flex:0 0 100%}
 /* Links fill their card, so the bottom-aligned status and the focus ring
    cover the whole card; the ring is drawn inside because the track clips. */
