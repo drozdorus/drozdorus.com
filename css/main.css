@@ -14,6 +14,11 @@
   --text-light: #000;
   --bg-button: #f3f3f1;
   --border-color: transparent;
+  /* Hover for rows and cards: a shadow that stays inside the 5px row gap
+     (offset 4 + blur radius ~5 - spread 4), plus a lighter surface in dark
+     mode where a shadow alone does not read. */
+  --bg-hover: #fff;
+  --shadow-hover: 0 4px 10px -4px rgba(0,0,0,.18);
 }
 
 [data-theme="dark"] {
@@ -25,6 +30,8 @@
   --text-light: #fff;
   --bg-button: #3a3a3c;
   --border-color: #3a3a3c;
+  --bg-hover: #333336;
+  --shadow-hover: 0 4px 10px -4px rgba(0,0,0,.5);
 }
 
 *{box-sizing:border-box}.user__lang,.user__name,.user__theme{font-family:"Geist Variable",sans-serif;font-weight:600}.user__position,body{font-family:"Geist Variable",sans-serif;font-weight:500}.main__banner{background:var(--bg-accent)}*{padding:0}.main__banner,.to-top__banner,.user,.user__lang,.user__theme{text-align:center}*{margin:0}@font-face{font-family:"Geist Variable";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/Geist-Variable-latin.woff2") format("woff2-variations");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Geist Variable";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/Geist-Variable-cyrillic.woff2") format("woff2-variations");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}.media__text i,.user__photo,.user__photo img{display:block}/* Theme Toggle Button Styles - простий постійний фон */
@@ -159,37 +166,41 @@ svg, img[src$=".svg"] {
     transition:transform .18s ease;
   }
 
-  .media__item:hover,.media__item:focus-visible{
-    transform:translateY(-2px);
-    box-shadow:0 8px 20px rgba(0,0,0,.1);
+  /* No vertical lift: rows are only 5px apart, so a translate closes the
+     gap and the shadow spills onto the neighbours. The shadow is sized to
+     stay inside that gap; the corner arrow carries the motion. */
+  .media__item:not(.media__item--inactive):hover{
+    background-color:var(--bg-hover);
+    box-shadow:var(--shadow-hover);
   }
   .media__item:hover:after,.media__item:focus-visible:after{
     transform:translate(2px,-2px);
   }
   .media__item:active{
-    transform:translateY(0);
     box-shadow:none;
   }
 
   .slider.web-slider .slider__item:not(.slider__item--inactive):hover,
-  .slider.web-slider .slider__item:not(.slider__item--inactive):focus-within{
-    transform:translateY(-3px);
-    box-shadow:0 10px 24px rgba(0,0,0,.12);
+  .slider.portfolio .slider__item:hover{
+    background-color:var(--bg-hover);
+    box-shadow:var(--shadow-hover);
   }
   .slider.web-slider .slider__item:not(.slider__item--inactive):hover:before,
   .slider.web-slider .slider__item:not(.slider__item--inactive):focus-within:before{
     transform:translate(2px,-2px);
   }
-
-  .slider.portfolio .slider__item:hover,
-  .slider.portfolio .slider__item:focus-within{
-    transform:translateY(-3px);
-    box-shadow:0 10px 24px rgba(0,0,0,.12);
+  .slider.web-slider .slider__item:active,
+  .slider.portfolio .slider__item:active{
+    box-shadow:none;
   }
   .slider.portfolio .slider__item:hover .slider__href:before,
   .slider.portfolio .slider__item:focus-within .slider__href:before{
     transform:translate(2px,-2px);
   }
+
+  /* the theme button gets the same hover as the language button next to it */
+  .user__theme{transition:background-color .3s ease,transform .3s ease}
+  .user__theme:hover{background:var(--bg-button);transform:scale(1.05)}
 
   .site-footer__icon{transition:opacity .2s ease,transform .18s ease}
   .site-footer__icon:hover{transform:translateY(-2px)}
