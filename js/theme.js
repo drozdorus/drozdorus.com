@@ -26,9 +26,21 @@
         themeToggle.addEventListener('click', function() {
             const currentTheme = getThemePreference();
             const newTheme = currentTheme === DARK_THEME ? LIGHT_THEME : DARK_THEME;
-            
-            setThemePreference(newTheme);
-            applyTheme(newTheme);
+            const prefersReducedMotion = window.matchMedia &&
+                window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // Smooth cross-fade via the View Transitions API where supported;
+            // plain instant swap everywhere else (older Safari/Firefox) or
+            // when the user asked for less motion.
+            if (!prefersReducedMotion && document.startViewTransition) {
+                document.startViewTransition(function() {
+                    setThemePreference(newTheme);
+                    applyTheme(newTheme);
+                });
+            } else {
+                setThemePreference(newTheme);
+                applyTheme(newTheme);
+            }
         });
     }
     

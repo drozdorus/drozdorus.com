@@ -182,3 +182,83 @@ svg, img[src$=".svg"] {
 @media screen and (min-width:1024px){
   .user__name{font-size:48px;line-height:1.1;margin-bottom:10px}
 }
+
+/* Micro-interactions (item 3): hover/active lift on cards, arrow nudges,
+   visible keyboard focus, a cross-fade theme switch (wired in theme.js via
+   the View Transitions API, degrading gracefully where unsupported). Hover
+   motion only where a real pointer is present, and everything collapses to
+   plain color/opacity changes under prefers-reduced-motion. */
+@media (hover:hover) and (pointer:fine){
+  .media__item,
+  .slider.web-slider .slider__item,
+  .slider.portfolio .slider__item{
+    transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease;
+  }
+  .media__item:after,.slider__item:before,.slider__href:before{
+    transition:transform .18s ease;
+  }
+
+  .media__item:hover,.media__item:focus-visible{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+  }
+  .media__item:hover:after,.media__item:focus-visible:after{
+    transform:translate(2px,-2px);
+  }
+  .media__item:active{
+    transform:translateY(0);
+    box-shadow:none;
+  }
+
+  .slider.web-slider .slider__item:not(.slider__item--inactive):hover,
+  .slider.web-slider .slider__item:not(.slider__item--inactive):focus-within{
+    transform:translateY(-3px);
+    box-shadow:0 10px 24px rgba(0,0,0,.12);
+  }
+  .slider.web-slider .slider__item:not(.slider__item--inactive):hover:before,
+  .slider.web-slider .slider__item:not(.slider__item--inactive):focus-within:before{
+    transform:translate(2px,-2px);
+  }
+
+  .slider.portfolio .slider__item:hover,
+  .slider.portfolio .slider__item:focus-within{
+    transform:translateY(-3px);
+    box-shadow:0 10px 24px rgba(0,0,0,.12);
+  }
+  .slider.portfolio .slider__item:hover .slider__href:before,
+  .slider.portfolio .slider__item:focus-within .slider__href:before{
+    transform:translate(2px,-2px);
+  }
+
+  .site-footer__icon{transition:opacity .2s ease,transform .18s ease}
+  .site-footer__icon:hover{transform:translateY(-2px)}
+}
+
+.media__item:focus-visible,
+.slider__link:focus-visible,
+.web-slider__link:focus-visible,
+.user__lang:focus-visible,
+.user__theme:focus-visible,
+.site-footer__icon:focus-visible,
+.to-top__banner:focus-visible{
+  outline:2px solid var(--bg-accent);
+  outline-offset:2px;
+}
+
+::view-transition-old(root),::view-transition-new(root){
+  animation-duration:.35s;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .media__item,.slider__item,.media__item:after,.slider__item:before,.slider__href:before,.site-footer__icon{
+    transition:none !important;
+  }
+  .media__item:hover,.media__item:focus-visible,
+  .slider.web-slider .slider__item:hover,.slider.portfolio .slider__item:hover,
+  .site-footer__icon:hover{
+    transform:none !important;
+  }
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){
+    animation:none !important;
+  }
+}
