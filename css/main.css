@@ -148,3 +148,31 @@ svg, img[src$=".svg"] {
   .media__description,.media__year{font-size:9.5px}
   .media__meta{flex-shrink:0;text-align:right}
 }
+
+/* Desktop two-column layout (item 1 of the visual refresh).
+   .layout__aside (photo/name/position + About me + Socials/contact) and
+   .layout__main (HOT/Now/Before/Ecosystem lists + the four portfolio
+   carousels) are two real sibling boxes now, so the sidebar can be a single
+   sticky element with no auto-placement/row-matching tricks needed. Below
+   1024px both are just plain blocks stacking in document order. */
+@media screen and (min-width:1024px){
+  .layout__grid{
+    display:grid;
+    grid-template-columns:minmax(300px,360px) 1fr;
+    column-gap:64px;
+    align-items:start;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+  .layout__aside{
+    position:sticky;
+    top:32px;
+    align-self:start;
+  }
+  .layout__aside .main__container{
+    max-width:none;
+    padding:0;
+    margin:0;
+  }
+}
