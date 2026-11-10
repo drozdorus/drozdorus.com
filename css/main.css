@@ -273,14 +273,3 @@ svg, img[src$=".svg"] {
   .carousel__arrow--prev:not(:disabled):hover{transform:scaleX(-1) translateX(2px)}
   .carousel__arrow--next:not(:disabled):hover{transform:translateX(2px)}
 }
-
-/* Pulsing dot next to the "Live" status label */
-.slider__status--live{display:inline-flex;align-items:center;gap:5px}
-.slider__status-dot{width:6px;height:6px;border-radius:50%;background:currentColor;display:inline-block}
-@media (prefers-reduced-motion:no-preference){
-  .slider__status-dot{animation:status-pulse 1.8s ease-in-out infinite}
-}
-@keyframes status-pulse{
-  0%,100%{opacity:1;transform:scale(1)}
-  50%{opacity:.35;transform:scale(1.5)}
-}
