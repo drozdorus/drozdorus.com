@@ -229,10 +229,38 @@ svg, img[src$=".svg"] {
    prev/next buttons (same spot slick used to insert them); .portfolio and
    .web-slider are the scrollable tracks themselves. */
 .media__container{position:relative}
-.portfolio,.web-slider{width:100%;padding-top:27px}
+
+/* The title sits directly above the track (no negative margin); the
+   prev/next arrows are pulled up into the title row and the track's own
+   top padding is the title-to-card gap, the same in all four carousels.
+   The title keeps clear of the arrows on narrow screens. */
+.media__title.slider--opt{margin-bottom:0;padding-right:76px}
+
+/* Web2/Web3 rows sit outside .main__container in the markup; give their
+   container exactly the same column as everything else, so the cards line
+   up with the section titles and the row edges. */
+body > .media.slide > .media__container{max-width:315px;margin:0 auto}
+@media screen and (min-width:345px){
+  body > .media.slide > .media__container{max-width:none;margin:0 30px}
+}
+@media screen and (min-width:445px){
+  body > .media.slide > .media__container{width:calc(100% - 60px);max-width:520px;margin:0 auto}
+}
+
+/* Track: 16px title-to-card gap on top, 10px at the bottom so the hover
+   shadow is not cut by the scroll container (the section margin below is
+   reduced by the same 10px). */
+.slider.portfolio,.slider.web-slider{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:16px 0 10px;
+}
+.media.slide{margin-bottom:16px}
 
 .slider{
   display:flex;
+  gap:16px;
   list-style:none;
   overflow-x:auto;
   overflow-y:hidden;
@@ -242,25 +270,42 @@ svg, img[src$=".svg"] {
   -ms-overflow-style:none;
 }
 .slider::-webkit-scrollbar{display:none}
-.slider__item{scroll-snap-align:start;flex:0 0 auto}
-.slider.portfolio .slider__item{width:100%;flex:0 0 100%}
-.slider.portfolio .slider__item:last-child{margin-right:0}
+.slider.portfolio{gap:20px}
+.slider__item{scroll-snap-align:start}
+/* Exactly two whole cards per view in the Web2/Web3 rows, one in the news
+   rows; gaps come from `gap`, not per-card margins, so nothing peeks in. */
+.slider.web-slider .slider__item{width:auto;margin:0;flex:0 0 calc((100% - 16px) / 2);min-width:0}
+.slider.portfolio .slider__item{width:auto;margin:0;flex:0 0 100%}
+/* Links fill their card, so the bottom-aligned status and the focus ring
+   cover the whole card; the ring is drawn inside because the track clips. */
+.web-slider__link,.slider__link{border-radius:inherit}
+.web-slider__link{height:100%}
+.web-slider__link:focus-visible,.slider__link:focus-visible{outline-offset:-2px}
 
 .carousel__arrow{
   position:absolute;
-  top:0;
+  top:-25px; /* centred on the 18px title line: -(18/2) - 32/2 */
   width:32px;
   height:32px;
   border:none;
+  border-radius:6px;
   background:url("../img/arrow2.svg") center/8px 16px no-repeat;
   font-size:0;
-  outline-offset:2px;
+  outline-offset:0;
   cursor:pointer;
   padding:0;
 }
-.carousel__arrow--prev{transform:scaleX(-1);right:28px;left:auto}
-.carousel__arrow--next{right:2px}
-.carousel__arrow:disabled{opacity:.35;cursor:default}
+/* The next glyph's right edge lands on the column edge (as on main); the
+   32px hit areas sit side by side without overlapping. */
+.carousel__arrow--next{right:-12px}
+.carousel__arrow--prev{transform:scaleX(-1);right:20px;left:auto}
+@media screen and (max-width:344px){
+  /* no side gutter here, so keep the buttons inside the viewport */
+  .carousel__arrow--next{right:0}
+  .carousel__arrow--prev{right:32px}
+}
+.carousel__arrow[aria-disabled="true"]{opacity:.35;cursor:default}
+.carousel__arrow:focus-visible{outline:2px solid var(--bg-accent)}
 [data-theme="dark"] .carousel__arrow{filter:invert(1)}
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]) .carousel__arrow{filter:invert(1)}
@@ -268,8 +313,8 @@ svg, img[src$=".svg"] {
 
 @media (hover:hover) and (pointer:fine){
   .carousel__arrow{transition:opacity .18s ease}
-  .carousel__arrow:not(:disabled):hover{opacity:.6}
+  .carousel__arrow:not([aria-disabled="true"]):hover{opacity:.6}
   /* prev is mirrored (scaleX(-1)), so its hover nudge needs the opposite sign */
-  .carousel__arrow--prev:not(:disabled):hover{transform:scaleX(-1) translateX(2px)}
-  .carousel__arrow--next:not(:disabled):hover{transform:translateX(2px)}
+  .carousel__arrow--prev:not([aria-disabled="true"]):hover{transform:scaleX(-1) translateX(2px)}
+  .carousel__arrow--next:not([aria-disabled="true"]):hover{transform:translateX(2px)}
 }

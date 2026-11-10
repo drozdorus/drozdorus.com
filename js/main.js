@@ -6,14 +6,12 @@
 (function () {
     'use strict';
 
-    function closestStep(track) {
-        var item = track.querySelector('.slider__item');
-        if (!item) return track.clientWidth;
-        var style = window.getComputedStyle(item);
-        var width = item.getBoundingClientRect().width;
-        var marginLeft = parseFloat(style.marginLeft) || 0;
-        var marginRight = parseFloat(style.marginRight) || 0;
-        return width + marginLeft + marginRight;
+    // One card plus the gap after it: the distance between two neighbouring
+    // cards (cards are spaced with CSS `gap`, not margins).
+    function step(track) {
+        var items = track.querySelectorAll('.slider__item');
+        if (items.length < 2) return track.clientWidth;
+        return items[1].offsetLeft - items[0].offsetLeft;
     }
 
     function setupCarousel(container) {
@@ -22,18 +20,25 @@
         var next = container.querySelector('[data-carousel-next]');
         if (!track || !prev || !next) return;
 
-        function update() {
-            var max = track.scrollWidth - track.clientWidth - 1;
-            prev.disabled = track.scrollLeft <= 0;
-            next.disabled = max <= 0 || track.scrollLeft >= max;
+        // aria-disabled instead of the disabled attribute: a disabled button
+        // drops keyboard focus to <body> the moment the row reaches its end.
+        function setDisabled(button, value) {
+            button.setAttribute('aria-disabled', value ? 'true' : 'false');
         }
 
-        prev.addEventListener('click', function () {
-            track.scrollBy({ left: -closestStep(track), behavior: 'smooth' });
-        });
-        next.addEventListener('click', function () {
-            track.scrollBy({ left: closestStep(track), behavior: 'smooth' });
-        });
+        function update() {
+            var max = track.scrollWidth - track.clientWidth;
+            setDisabled(prev, track.scrollLeft <= 1);
+            setDisabled(next, max <= 1 || track.scrollLeft >= max - 1);
+        }
+
+        function go(direction, button) {
+            if (button.getAttribute('aria-disabled') === 'true') return;
+            track.scrollBy({ left: direction * step(track), behavior: 'smooth' });
+        }
+
+        prev.addEventListener('click', function () { go(-1, prev); });
+        next.addEventListener('click', function () { go(1, next); });
         track.addEventListener('scroll', update, { passive: true });
         window.addEventListener('resize', update);
         update();
