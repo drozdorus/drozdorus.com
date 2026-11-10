@@ -141,53 +141,6 @@ svg, img[src$=".svg"] {
   .media__meta{flex-shrink:0;text-align:right}
 }
 
-/* Desktop two-column layout (item 1 of the visual refresh).
-   .layout__aside (photo/name/position + About me + Socials/contact) and
-   .layout__main (HOT/Now/Before/Ecosystem lists + the four portfolio
-   carousels) are two real sibling boxes now, so the sidebar can be a single
-   sticky element with no auto-placement/row-matching tricks needed. Below
-   1024px, see the mobile-order block right below this one. */
-@media screen and (min-width:1024px){
-  .layout__grid{
-    display:grid;
-    grid-template-columns:minmax(300px,360px) 1fr;
-    column-gap:64px;
-    align-items:start;
-    max-width:1180px;
-    margin:0 auto;
-    padding:0 40px;
-  }
-  .layout__aside{
-    position:sticky;
-    top:32px;
-    align-self:start;
-  }
-  .layout__aside .main__container{
-    max-width:none;
-    padding:0;
-    margin:0;
-  }
-}
-
-/* Mobile/tablet order: identity first, then the lists/carousels (the
-   actual point of a link-in-bio page), then About me + Socials/contact
-   at the bottom - the original order, restored after .layout__aside
-   grouped them with the photo for the desktop sticky sidebar above.
-   .layout__aside is unwrapped (display:contents) so its three
-   .main__container children (photo/name block, About me, Socials) become
-   direct flex items of .layout__grid next to .layout__main, and `order`
-   puts them back in sequence. This only changes visual order: DOM/tab
-   order is still photo block -> About me -> Socials -> the lists, same as
-   it's been since the two-column layout landed. */
-@media screen and (max-width:1023px){
-  .layout__grid{display:flex;flex-direction:column}
-  .layout__aside{display:contents}
-  .layout__aside > .main__container:nth-child(1){order:1}
-  .layout__main{order:2}
-  .layout__aside > .main__container:nth-child(2){order:3}
-  .layout__aside > .main__container:nth-child(3){order:4}
-}
-
 /* Type scale (item 2). Body/meta/section-title sizes bumped globally above;
    the name only grows on wide viewports where there's room for it. */
 @media screen and (min-width:1024px){
