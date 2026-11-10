@@ -167,6 +167,36 @@
     <!-- End Google Tag Manager -->
 </head>
 <body>
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+    <!-- Row-icon sprite (item 5). Available ids: i-fire, i-news, i-briefcase, i-grad, i-trophy. One consistent 24x24 outline style, colored via currentColor so both themes work automatically. -->
+    <symbol id="i-fire" viewBox="0 0 24 24">
+        <path d="M12 2c1 3-3 4-3 8a3 3 0 0 0 6 0c0-1-.5-2-1-3 2 1 4 3.5 4 7a6 6 0 0 1-12 0c0-5 3-7 3-8 0-1.5-1-3-1-4 1.5 0 3 .5 4 2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-news" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="14" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M17 8h3a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2H6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="6" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="6" y1="11" x2="13" y2="11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="6" y1="14" x2="13" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="6" y1="17" x2="10" y2="17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24">
+        <rect x="3" y="7" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="3" y1="13" x2="21" y2="13" stroke="currentColor" stroke-width="1.6"/>
+    </symbol>
+    <symbol id="i-grad" viewBox="0 0 24 24">
+        <path d="M12 3 2 8l10 5 10-5-10-5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="22" y1="8" x2="22" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24">
+        <path d="M8 4h8v5a4 4 0 0 1-8 0V4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 5H5a2 2 0 0 0 0 4h1.5M16 5h3a2 2 0 0 1 0 4h-1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="12" y1="13" x2="12" y2="17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M8 21h8M9 17h6v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+</svg>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PTHHBV8"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -239,13 +269,13 @@
     <div class="layout__main">
     <div class="main__container">
         <div class="media">
-            <h2 class="media__title">Актуальне 🔥</h2>
+            <h2 class="media__title">Актуальне <svg class="icon media__title-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-fire"/></svg></h2>
             <a target="_blank" rel="noopener noreferrer" href="https://speka.ua/business/25-lyudei-ci-agenti-kudi-naspravdi-staviti-ai-u-performance-biznesi-v4y0de" class="media__item">
-                <span class="media__icon"><span class="media__text-icon">📰</span></span>
+                <span class="media__icon"><svg class="icon media__text-icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-news"/></svg></span>
                 <span class="media__text">Колонка: 25 людей чи агенти. SPEKA</span>
             </a>
             <a target="_blank" rel="noopener noreferrer" href="https://calma.io/hiring/" class="media__item">
-                <span class="media__icon"><span class="media__text-icon">💼</span></span>
+                <span class="media__icon"><svg class="icon media__text-icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-briefcase"/></svg></span>
                 <span class="media__text">Calma шукає Creative Producer</span>
             </a>
         </div>
@@ -288,12 +318,12 @@
         <div class="media">
             <h2 class="media__title">Екосистема</h2>
             <a target="_blank" rel="noopener noreferrer" href="https://clust.team/co-founders-program/" class="media__item">
-                <span class="media__icon bg"><span class="media__text-icon">🎓</span></span>
+                <span class="media__icon bg"><svg class="icon media__text-icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-grad"/></svg></span>
                 <span class="media__text"><i class="gray">Експерт</i>CLUST Co&#8209;founders Program</span>
                 <span class="media__meta"><span class="media__description">startup education</span><span class="media__year">2025</span></span>
             </a>
             <a target="_blank" rel="noopener noreferrer" href="https://usf.com.ua/en/?p=23957" class="media__item">
-                <span class="media__icon bg"><span class="media__text-icon">🏆</span></span>
+                <span class="media__icon bg"><svg class="icon media__text-icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-trophy"/></svg></span>
                 <span class="media__text"><i class="gray">Член журі</i>IDF Awards</span>
                 <span class="media__meta"><span class="media__description">national startup award</span><span class="media__year">2024</span></span>
             </a>
