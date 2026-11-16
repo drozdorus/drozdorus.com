@@ -297,6 +297,27 @@ body > .media.slide > .media__container{max-width:315px;margin:0 auto}
   .slider.web-slider .slider__status{padding-top:16px}
 }
 .slider.portfolio .slider__item{width:auto;margin:0;flex:0 0 100%}
+/* Phones: the tracks run edge to edge of the screen, so a card slides in
+   from beyond the viewport instead of being cut at the column edge. The
+   track's side padding (and scroll-padding, for snapping) equals the page
+   gutter, so at rest the card sits exactly on the column as before. */
+@media screen and (max-width:444px){
+  body{overflow-x:clip}
+  .slider.portfolio,.slider.web-slider{
+    width:auto;
+    margin-left:calc(50% - 50vw);
+    margin-right:calc(50% - 50vw);
+    padding-left:calc(50vw - 50%);
+    padding-right:calc(50vw - 50%);
+    /* % here resolves against the track, not the column: state the gutter */
+    scroll-padding-inline:30px;
+    /* gap = gutter, so at rest the neighbouring card stays fully off-screen */
+    gap:30px;
+  }
+}
+@media screen and (max-width:344px){
+  .slider.portfolio,.slider.web-slider{scroll-padding-inline:max(0px, calc((100vw - 315px) / 2))}
+}
 /* Links fill their card, so the bottom-aligned status and the focus ring
    cover the whole card; the ring is drawn inside because the track clips. */
 .web-slider__link,.slider__link{border-radius:inherit}
