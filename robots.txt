@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
+# Article cards (img/media*) are covers and collages, not the owner's photo.
+# Kept out of Google Images and image thumbnails so the portrait
+# (img/ruslan-drozdov.jpg) is the only image Google can pick for this site.
+User-agent: Googlebot-Image
+Allow: /
+Disallow: /img/media
+
 Sitemap: https://drozdorus.com/sitemap.xml
